@@ -1,0 +1,53 @@
+<mxfile host="app.diagrams.net" modified="2024-04-13T00:32:33.545Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="vzPAzEaER6sr8UmirA7Q" version="24.2.5" type="device">
+  <diagram name="Página-1" id="vArT5NzZRxoss8GxOLyL">
+    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I53GjqTAzRf43crO5PVd-1" value="Lista de tarefas" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="130" y="210" width="550" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-2" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.rrect;rSize=0;strokeColor=#999999;fillColor=#ffffff;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="340" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-3" value="Criar" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.rrect;rSize=0;fillColor=#eeeeee;strokeColor=#999999;gradientColor=#cccccc;align=left;spacingLeft=4;fontSize=17;fontColor=#666666;labelPosition=right;" vertex="1" parent="I53GjqTAzRf43crO5PVd-2">
+          <mxGeometry x="8" y="7.5" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-4" value="Visualizar" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.rrect;rSize=0;fillColor=#eeeeee;strokeColor=#999999;gradientColor=#cccccc;align=left;spacingLeft=4;fontSize=17;fontColor=#666666;labelPosition=right;" vertex="1" parent="I53GjqTAzRf43crO5PVd-2">
+          <mxGeometry x="8" y="37.5" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-5" value="Excluir" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.checkbox;rSize=0;resizable=0;fillColor=#aaaaaa;strokeColor=#444444;gradientColor=#666666;align=left;spacingLeft=4;fontSize=17;fontColor=#008cff;labelPosition=right;" vertex="1" parent="I53GjqTAzRf43crO5PVd-2">
+          <mxGeometry x="8" y="67.5" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-9" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.rrect;rSize=0;strokeColor=#999999;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="160" y="300" width="330" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-10" value="Tarefas" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.rrect;rSize=0;strokeColor=#999999;fontColor=#008cff;fontSize=17;fillColor=#ffffff;resizeWidth=1;whiteSpace=wrap;" vertex="1" parent="I53GjqTAzRf43crO5PVd-9">
+          <mxGeometry width="330" height="30" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-11" value="tarefa1&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; para fazer" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.anchor;fontSize=17;fontColor=#666666;align=left;spacingLeft=5;resizeWidth=1;whiteSpace=wrap;" vertex="1" parent="I53GjqTAzRf43crO5PVd-9">
+          <mxGeometry width="330" height="20" relative="1" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-12" value="exemplo2&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; feito" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.anchor;fontSize=17;fontColor=#666666;align=left;spacingLeft=5;resizeWidth=1;whiteSpace=wrap;" vertex="1" parent="I53GjqTAzRf43crO5PVd-9">
+          <mxGeometry width="330" height="20" relative="1" as="geometry">
+            <mxPoint y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-13" value="exemplo3&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; feito" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.rrect;rSize=0;fontSize=17;fontColor=#666666;align=left;spacingLeft=5;fillColor=#ddeeff;strokeColor=none;resizeWidth=1;whiteSpace=wrap;" vertex="1" parent="I53GjqTAzRf43crO5PVd-9">
+          <mxGeometry width="330" height="20" relative="1" as="geometry">
+            <mxPoint y="70" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I53GjqTAzRf43crO5PVd-14" value="exemplo4&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;para fazer" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.anchor;fontSize=17;fontColor=#666666;align=left;spacingLeft=5;resizeWidth=1;whiteSpace=wrap;" vertex="1" parent="I53GjqTAzRf43crO5PVd-9">
+          <mxGeometry width="330" height="20" relative="1" as="geometry">
+            <mxPoint y="90" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
