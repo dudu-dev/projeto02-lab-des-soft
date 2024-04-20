@@ -10,7 +10,7 @@ import com.labdessoft.roteiro01.repository.TaskRepository;
 
 @Service
 public class TaskService {
-    private static TaskRepository taskRepository = null;
+    private static TaskRepository taskRepository;
 
     @Autowired
     public TaskService(TaskRepository taskRepository){
