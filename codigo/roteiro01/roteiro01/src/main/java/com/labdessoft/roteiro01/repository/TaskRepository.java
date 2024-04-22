@@ -2,7 +2,8 @@ package com.labdessoft.roteiro01.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.labdessoft.roteiro01.entity.Task;
+import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +16,7 @@ public class TaskRepository {
         this.taskJpaRepository = taskJpaRepository;
     }
 
-    public Task save(Task task){
+    public TaskComDataEPrazo save(TaskComDataEPrazo task){
         return taskJpaRepository.save(task);
     }
 
@@ -23,11 +24,11 @@ public class TaskRepository {
         taskJpaRepository.deleteById(id);
     }
 
-    public List<Task> search(){
+    public List<TaskComDataEPrazo> search(){
         return taskJpaRepository.findAll();
     }
 
-    public Optional<Task> seachById(Long id){
+    public Optional<TaskComDataEPrazo> seachById(Long id){
         return taskJpaRepository.findById(id);
     }
 

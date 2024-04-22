@@ -1,5 +1,7 @@
 package com.labdessoft.roteiro01.entity;
 
+import java.time.LocalDate;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,13 +38,25 @@ public class Task {
 
     @Column(name = "Equipe")
     private boolean team;
+
+    @Column(name = "dataInicio")
+    LocalDate dataInicio;
+
+    @Column(name = "dataPrevista")
+    LocalDate dataPrevista;
     
-    public Task(Long id, String name, String description, boolean individual, boolean team){
+    @Column(name = "dataConclusao")
+    LocalDate dataConclusao;  
+    
+    
+    public Task(Long id, String name, String description, boolean individual, boolean team, LocalDate dataPrevista, LocalDate dataConclusao){
         this.id = id;
         this.name = name;
         this.description = description;
         this.individual = individual;
         this.team = team;
+        this.dataPrevista = dataPrevista;
+        this.dataConclusao = dataConclusao;
     }
 
     @Override

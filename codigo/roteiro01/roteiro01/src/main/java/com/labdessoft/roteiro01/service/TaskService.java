@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.labdessoft.roteiro01.entity.Task;
+import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 import com.labdessoft.roteiro01.repository.TaskRepository;
 
 @Service
@@ -17,7 +17,7 @@ public class TaskService {
         TaskService.taskRepository = taskRepository;
     }
 
-    public static Task save(Task task){
+    public static TaskComDataEPrazo save(TaskComDataEPrazo task){
         return taskRepository.save(task);
     }
 
@@ -25,11 +25,11 @@ public class TaskService {
         taskRepository.deleteById(id);
     }
 
-    public List<Task> search(){
+    public List<TaskComDataEPrazo> search(){
         return taskRepository.search();
     }
 
-    public Optional<Task> searchById(Long id){
+    public Optional<TaskComDataEPrazo> searchById(Long id){
         return taskRepository.seachById(id);
     }
 }

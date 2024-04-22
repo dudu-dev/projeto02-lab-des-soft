@@ -1,9 +1,9 @@
 package com.labdessoft.roteiro01.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.labdessoft.roteiro01.entity.Task;
+import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 
-public interface ITaskJpaRepository extends JpaRepository<Task, Long> {
+public interface ITaskJpaRepository extends JpaRepository<TaskComDataEPrazo, Long> {
     
     boolean existsById(Long id);
 

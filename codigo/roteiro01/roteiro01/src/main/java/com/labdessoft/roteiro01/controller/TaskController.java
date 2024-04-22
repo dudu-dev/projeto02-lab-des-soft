@@ -1,6 +1,6 @@
 package com.labdessoft.roteiro01.controller;
 
-import com.labdessoft.roteiro01.entity.Task;
+import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 import com.labdessoft.roteiro01.service.TaskService;
 
 import io.swagger.annotations.ApiOperation;
@@ -34,20 +34,20 @@ public class TaskController {
 
     @ApiOperation(value = "Retorna uma lista de tarefas")
     @GetMapping
-    public List<Task> getTask() {
+    public List<TaskComDataEPrazo> getTask() {
         return taskService.search();
     }
 
     @ApiOperation(value = "Retorna uma tarefa especifica")
     @GetMapping("/{id}")
-    public Optional<Task> getTaskById(@PathVariable Long id){
+    public Optional<TaskComDataEPrazo> getTaskById(@PathVariable Long id){
         return taskService.searchById(id); 
     }
 
     @ApiOperation(value = "Recebe uma tarefa")
     @PostMapping
-    public ResponseEntity <Task> postTask(@RequestBody Task reqBodyTask){
-        Task task = TaskService.save(reqBodyTask);
+    public ResponseEntity <TaskComDataEPrazo> postTask(@RequestBody TaskComDataEPrazo reqBodyTask){
+        TaskComDataEPrazo task = TaskService.save(reqBodyTask);
         URI newTaskLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(task.getId()).toUri();
         return ResponseEntity.created(newTaskLocation).body(task);
     }
@@ -55,7 +55,7 @@ public class TaskController {
     @ApiOperation(value = "Atualiza uma tarefa")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void putTask(@PathVariable Long id, @RequestBody Task reqBodyTask) {
+    public void putTask(@PathVariable Long id, @RequestBody TaskComDataEPrazo reqBodyTask) {
         reqBodyTask.setId(id);
         TaskService.save(reqBodyTask);
     }
