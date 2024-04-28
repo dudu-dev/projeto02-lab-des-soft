@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.labdessoft.roteiro01.entity.Task;
 import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
-import com.labdessoft.roteiro01.repository.TaskComDataEPrazoRepository;
+import com.labdessoft.roteiro01.repository.TaskRepository;
 
 @Service
 public class TaskService {
-    private static TaskComDataEPrazoRepository taskComDataEPrazoRepository;
+    private static TaskRepository taskComDataEPrazoRepository;
 
     @Autowired
-    public TaskService(TaskComDataEPrazoRepository taskComDataEPrazoRepository){
+    public TaskService(TaskRepository taskComDataEPrazoRepository){
         TaskService.taskComDataEPrazoRepository = taskComDataEPrazoRepository;
     }
     public static Task save(Task task){
@@ -41,12 +41,12 @@ public class TaskService {
         taskComDataEPrazoRepository.deleteTaskComDataEPrazoById(id);
     }
 
-    //public List<TaskComDataEPrazo> searchTaskComDataEPrazo(){
-    //    return taskComDataEPrazoRepository.searchTaskComDataEPrazo();
-    //}
+    public List<TaskComDataEPrazo> searchTaskComDataEPrazo(){
+       return taskComDataEPrazoRepository.searchTaskComDataEPrazo();
+    }
     
-    //public Optional<TaskComDataEPrazo> searchTaskComDataEPrazoById(Long id){
-    //    return taskComDataEPrazoRepository.seachTaskComDataEPrazoById(id);
-    //}
+    public Optional<TaskComDataEPrazo> searchTaskComDataEPrazoById(Long id){
+        return taskComDataEPrazoRepository.seachTaskComDataEPrazoById(id);
+    }
     
 }

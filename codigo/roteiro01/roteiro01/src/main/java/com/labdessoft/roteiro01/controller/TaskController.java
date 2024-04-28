@@ -73,17 +73,17 @@ public class TaskController {
         
 
 // Endpoints que referenciam novos tipos de tarefas com data e com prazo
-    //@ApiOperation(value = "Retorna uma lista de tarefas com data e Prazo")
-    //@GetMapping
-    //public List<TaskComDataEPrazo> getTaskComDataEPrazo() {
-    //    return taskService.searchTaskComDataEPrazo();
-    //}
+    @ApiOperation(value = "Retorna uma lista de tarefas com data e Prazo")
+    @GetMapping
+    public List<TaskComDataEPrazo> getTaskComDataEPrazo() {
+        return taskService.searchTaskComDataEPrazo();
+    }
 
-    //@ApiOperation(value = "Retorna uma tarefa especifica com data e Prazo")
-    //@GetMapping("/{id}")
-    //public Optional<TaskComDataEPrazo> getTaskComDataEPrazoById(@PathVariable Long id){
-    //    return taskService.searchTaskComDataEPrazoById(id);
-    //}
+    @ApiOperation(value = "Retorna uma tarefa especifica com data e Prazo")
+    @GetMapping("/{id}")
+    public Optional<TaskComDataEPrazo> getTaskComDataEPrazoById(@PathVariable Long id){
+        return taskService.searchTaskComDataEPrazoById(id);
+    }
 
     @ApiOperation(value = "Recebe uma tarefa com data e Prazo")
     @PostMapping
