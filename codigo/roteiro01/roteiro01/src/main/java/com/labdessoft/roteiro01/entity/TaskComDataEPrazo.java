@@ -23,7 +23,7 @@ public class TaskComDataEPrazo extends Task {
     LocalDate dataPrevista;
     
     @Column(name = "dataConclusao")
-    LocalDate dataConclusao;  
+    static LocalDate dataConclusao;  
     
     @Column(name = "statusDeAtraso")
     boolean statusEmAtraso;
@@ -65,11 +65,11 @@ public class TaskComDataEPrazo extends Task {
         }    
         return prioridade;
     }
-    
+
     public TaskComDataEPrazo(LocalDate dataInicio, LocalDate dataPrevista,LocalDate dataConclusao, boolean statusEmAtraso, Long quantDias, Long prazo, String prioridade){
         this.dataInicio = dataInicio;
         this.dataPrevista = dataPrevista;
-        this.dataConclusao = dataConclusao;
+        TaskComDataEPrazo.dataConclusao = dataConclusao;
         this.statusEmAtraso = statusEmAtraso;
         this.prazo = prazo;
         this.prioridade = prioridade;
@@ -99,20 +99,22 @@ public class TaskComDataEPrazo extends Task {
         return prazo;
     }
 
-    public Boolean verificaSeDataEValidaParaIncluirTarefa(LocalDate dataConclusao, LocalDate dataAtual){
-        dataAtual.getChronology();
+    public static Boolean verificaSeDataEValidaParaIncluirTarefa(boolean tarefaValida){
+        LocalDate dataAtual = LocalDate.now();
+        tarefaValida = false;
         if(dataAtual.isEqual(dataConclusao) || dataAtual.isAfter(dataConclusao)){
-            return true;
+            tarefaValida = true;
+            return tarefaValida;
         }
         else{
-            return false;
+            return tarefaValida;
         }
     }
 
     public LocalDate getDataPrevista(){
         return dataPrevista;
     }
-    @Override
+
     public void setDataPrevista(LocalDate dataPrevista){
         this.dataPrevista = dataPrevista;
     }
@@ -121,13 +123,7 @@ public class TaskComDataEPrazo extends Task {
         return dataConclusao;
     }
 
-    @Override
     public void setDataConclusao(LocalDate dataConclusao){
-        this.dataConclusao = dataConclusao;
-    }
-
-    public static boolean verificaSeDataEValidaParaIncluirTarefa(boolean b) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'verificaSeDataEValidaParaIncluirTarefa'");
+        TaskComDataEPrazo.dataConclusao = dataConclusao;
     }
 }

@@ -48,7 +48,6 @@ public class Task {
     @Column(name = "dataConclusao")
     LocalDate dataConclusao;  
     
-    
     public Task(Long id, String name, String description, boolean individual, boolean team, LocalDate dataPrevista, LocalDate dataConclusao){
         this.id = id;
         this.name = name;

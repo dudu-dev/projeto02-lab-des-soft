@@ -8,31 +8,29 @@ import org.springframework.stereotype.Service;
 import com.labdessoft.roteiro01.entity.Task;
 import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 import com.labdessoft.roteiro01.repository.TaskComDataEPrazoRepository;
-import com.labdessoft.roteiro01.repository.TaskRepository;
 
 @Service
 public class TaskService {
     private static TaskComDataEPrazoRepository taskComDataEPrazoRepository;
-    private static TaskRepository taskRepository;
 
     @Autowired
-    public TaskService(TaskRepository taskRepository ,TaskComDataEPrazoRepository taskComDataEPrazoRepository){
+    public TaskService(TaskComDataEPrazoRepository taskComDataEPrazoRepository){
         TaskService.taskComDataEPrazoRepository = taskComDataEPrazoRepository;
     }
     public static Task save(Task task){
-        return taskRepository.save(task);
+        return taskComDataEPrazoRepository.save(task);
     }
     
     public void deleteById(Long id){
-        taskRepository.deleteById(id);
+        taskComDataEPrazoRepository.deleteById(id);
     }
-    
-    public List<Task> search(){
-        return taskRepository.search();
+
+    public List<Task> search() {
+        return taskComDataEPrazoRepository.search();
     }
 
     public Optional<Task> searchById(Long id){
-        return taskRepository.seachById(id);
+        return taskComDataEPrazoRepository.seachById(id);
     }
     
     public static TaskComDataEPrazo saveTaskComDataEPrazo(TaskComDataEPrazo taskComDataEPrazo){
@@ -43,11 +41,12 @@ public class TaskService {
         taskComDataEPrazoRepository.deleteTaskComDataEPrazoById(id);
     }
 
-    public List<TaskComDataEPrazo> searchTaskComDataEPrazo(){
-        return taskComDataEPrazoRepository.searchTaskComDataEPrazo();
-    }
+    //public List<TaskComDataEPrazo> searchTaskComDataEPrazo(){
+    //    return taskComDataEPrazoRepository.searchTaskComDataEPrazo();
+    //}
     
-    public Optional<TaskComDataEPrazo> searchTaskComDataEPrazoById(Long id){
-        return taskComDataEPrazoRepository.seachTaskComDataEPrazoById(id);
-    }
+    //public Optional<TaskComDataEPrazo> searchTaskComDataEPrazoById(Long id){
+    //    return taskComDataEPrazoRepository.seachTaskComDataEPrazoById(id);
+    //}
+    
 }
