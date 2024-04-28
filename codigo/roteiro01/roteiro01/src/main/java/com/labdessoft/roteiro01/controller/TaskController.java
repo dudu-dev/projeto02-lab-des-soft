@@ -1,7 +1,8 @@
 package com.labdessoft.roteiro01.controller;
 
-import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
+import com.labdessoft.roteiro01.entity.Task;
 import com.labdessoft.roteiro01.service.TaskService;
+import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "*")
 public class TaskController {
+
     private final TaskService taskService;
 
     @Autowired
@@ -32,30 +34,32 @@ public class TaskController {
         this.taskService = taskService;
     }
 
+
+//Endipoins antigos que referenciam a tarefa do tipo livre
     @ApiOperation(value = "Retorna uma lista de tarefas")
     @GetMapping
-    public List<TaskComDataEPrazo> getTask() {
+    public List<Task> getTask() {
         return taskService.search();
     }
 
     @ApiOperation(value = "Retorna uma tarefa especifica")
     @GetMapping("/{id}")
-    public Optional<TaskComDataEPrazo> getTaskById(@PathVariable Long id){
-        return taskService.searchById(id); 
+    public Optional<Task> getTaskById(@PathVariable Long id){
+        return taskService.searchById(id);
     }
 
     @ApiOperation(value = "Recebe uma tarefa")
     @PostMapping
-    public ResponseEntity <TaskComDataEPrazo> postTask(@RequestBody TaskComDataEPrazo reqBodyTask){
-        TaskComDataEPrazo task = TaskService.save(reqBodyTask);
+    public ResponseEntity <Task> postTask(@RequestBody Task reqBodyTask){
+        Task task = TaskService.save(reqBodyTask);
         URI newTaskLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(task.getId()).toUri();
         return ResponseEntity.created(newTaskLocation).body(task);
     }
-
+    
     @ApiOperation(value = "Atualiza uma tarefa")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void putTask(@PathVariable Long id, @RequestBody TaskComDataEPrazo reqBodyTask) {
+    public void putTask(@PathVariable Long id, @RequestBody Task reqBodyTask) {
         reqBodyTask.setId(id);
         TaskService.save(reqBodyTask);
     }
@@ -65,5 +69,57 @@ public class TaskController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTask(@PathVariable Long id){
         taskService.deleteById(id);
-    }    
+    }
+        
+
+// Endpoints que referenciam novos tipos de tarefas com data e com prazo
+    @ApiOperation(value = "Retorna uma lista de tarefas com data e Prazo")
+    @GetMapping
+    public List<TaskComDataEPrazo> getTaskComDataEPrazo() {
+        return taskService.searchTaskComDataEPrazo();
+    }
+
+    @ApiOperation(value = "Retorna uma tarefa especifica com data e Prazo")
+    @GetMapping("/{id}")
+    public Optional<TaskComDataEPrazo> getTaskComDataEPrazoById(@PathVariable Long id){
+        return taskService.searchTaskComDataEPrazoById(id);
+    }
+
+    @ApiOperation(value = "Recebe uma tarefa com data e Prazo")
+    @PostMapping
+    public ResponseEntity<TaskComDataEPrazo> postTaskComDataEPrazo(@RequestBody TaskComDataEPrazo reqBodyTask){
+        TaskComDataEPrazo taskComDataEPrazo = TaskService.saveTaskComDataEPrazo(reqBodyTask);
+        URI newTaskComDataEPrazoLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(taskComDataEPrazo.getId()).toUri();
+        return ResponseEntity.created(newTaskComDataEPrazoLocation).body(taskComDataEPrazo);
+    }
+
+    @ApiOperation(value = "Recebe uma tarefa e varifica se é compativel com uma tarefa do tipo data e prazo")
+    @PostMapping("/{id}")
+    public ResponseEntity<TaskComDataEPrazo> postTaskComDataEPrazoById(@RequestBody TaskComDataEPrazo reqBodyTask){
+        if(TaskComDataEPrazo.verificaSeDataEValidaParaIncluirTarefa(true)){
+            TaskComDataEPrazo taskComDataEPrazo = TaskService.saveTaskComDataEPrazo(reqBodyTask);
+            URI newTaskComDataEPrazoLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(taskComDataEPrazo.getId()).toUri();
+            return ResponseEntity.created(newTaskComDataEPrazoLocation).body(taskComDataEPrazo);
+        }
+        else{
+            return null;
+        }
+    }
+
+    @ApiOperation(value = "Atualiza uma tarefa com data e Prazo")
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void putTaskComDataEPrazo(@PathVariable Long id, @RequestBody TaskComDataEPrazo reqBodyTask) {
+        if (TaskComDataEPrazo.verificaSeDataEValidaParaIncluirTarefa(true)) {
+            reqBodyTask.setId(id);
+            TaskService.saveTaskComDataEPrazo(reqBodyTask);
+        }
+    }
+    
+    @ApiOperation(value = "Exclui uma tarefa com data e Prazo")
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteTaskcomDataEPrazo(@PathVariable Long id){
+    taskService.deleteTaskComDataEPrazoById(id);
+    }
 }
