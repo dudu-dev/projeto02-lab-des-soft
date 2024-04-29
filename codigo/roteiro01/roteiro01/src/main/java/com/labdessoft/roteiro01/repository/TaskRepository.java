@@ -5,10 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.labdessoft.roteiro01.entity.Task;
 import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -18,9 +14,6 @@ public class TaskRepository {
 
     private final ITaskJpaRepository taskJpaRepository;
     private final ITaskComDataEPrazoJpaRepository taskComDataEPrazoJpaRepository;
-
-    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TarefasPU");
-    EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     @Autowired
     public TaskRepository(ITaskJpaRepository taskJpaRepository, ITaskComDataEPrazoJpaRepository taskComDataEPrazoJpaRepository){
@@ -60,6 +53,6 @@ public class TaskRepository {
 
     public Optional<Task> seachById(Long id){
         return taskJpaRepository.findById(id);
-    } 
+    }
 
 }
