@@ -13,8 +13,6 @@ public interface ITaskJpaRepository  extends JpaRepository<Task, Long>{
 
     void deleteById(Long id);
 
-    Task save(Task task);
-
     Optional<Task> findById(Long id);
     
 }

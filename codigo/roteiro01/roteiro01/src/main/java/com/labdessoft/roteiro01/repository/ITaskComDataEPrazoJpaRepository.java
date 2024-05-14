@@ -8,7 +8,6 @@ import com.labdessoft.roteiro01.entity.TaskComDataEPrazo;
 
 public interface ITaskComDataEPrazoJpaRepository extends JpaRepository<TaskComDataEPrazo, Long>{
 
-    TaskComDataEPrazo save(TaskComDataEPrazo taskComDataEPrazo2);
 
     Optional<TaskComDataEPrazo> findById(Long id);
 
