@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-27T00:08:40.770Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="CU2G-_zxnxy_QjJY-QMf" version="24.3.1" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-29T01:56:21.237Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="mbLm_aYGH_znag3p4nTb" version="24.2.8" type="device">
   <diagram name="Página-1" id="dAu-gjBXxnC91OJZTj6k">
-    <mxGraphModel dx="1114" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="880" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -63,6 +63,51 @@
         </mxCell>
         <mxCell id="DBPw_M7csdqYWLVFalpZ-3" value="extend" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="640" y="218" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-1" value="visualizar lista de tarefa com data e prazo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-2" value="visualizar tarefa com data e com prazo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-3" value="editar tarefa com data e com prazo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="505" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-4" value="criar tarefa com data e com prazo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="510" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-5" value="excluir tarefa com data e com prazo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="550" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-6" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12LKlC3kns5zi2NpPciA-1" target="jAg7anBofTwvCOxkoS0x-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="410" as="sourcePoint" />
+            <mxPoint x="190" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-7" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="12LKlC3kns5zi2NpPciA-1" target="12LKlC3kns5zi2NpPciA-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="450" as="sourcePoint" />
+            <mxPoint x="440" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-8" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="12LKlC3kns5zi2NpPciA-4" target="jAg7anBofTwvCOxkoS0x-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="450" as="sourcePoint" />
+            <mxPoint x="160" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-9" value="" style="endArrow=none;html=1;rounded=0;exitX=0.975;exitY=0.613;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="12LKlC3kns5zi2NpPciA-4" target="12LKlC3kns5zi2NpPciA-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="580" as="sourcePoint" />
+            <mxPoint x="310" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12LKlC3kns5zi2NpPciA-10" value="" style="endArrow=none;html=1;rounded=0;exitX=0.967;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="12LKlC3kns5zi2NpPciA-2" target="12LKlC3kns5zi2NpPciA-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="490" as="sourcePoint" />
+            <mxPoint x="440" y="400" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
