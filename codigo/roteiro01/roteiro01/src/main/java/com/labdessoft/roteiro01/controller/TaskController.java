@@ -74,19 +74,19 @@ public class TaskController {
 
 // Endpoints que referenciam novos tipos de tarefas com data e com prazo
     @ApiOperation(value = "Retorna uma lista de tarefas com data e Prazo")
-    @GetMapping
+    @GetMapping("V2")
     public List<TaskComDataEPrazo> getTaskComDataEPrazo() {
         return taskService.searchTaskComDataEPrazo();
     }
 
     @ApiOperation(value = "Retorna uma tarefa especifica com data e Prazo")
-    @GetMapping("/{id}")
+    @GetMapping("V2/{id}")
     public Optional<TaskComDataEPrazo> getTaskComDataEPrazoById(@PathVariable Long id){
         return taskService.searchTaskComDataEPrazoById(id);
     }
 
     @ApiOperation(value = "Recebe uma tarefa com data e Prazo")
-    @PostMapping
+    @PostMapping("V2")
     public ResponseEntity<TaskComDataEPrazo> postTaskComDataEPrazo(@RequestBody TaskComDataEPrazo reqBodyTask){
         TaskComDataEPrazo taskComDataEPrazo = TaskService.saveTaskComDataEPrazo(reqBodyTask);
         URI newTaskComDataEPrazoLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(taskComDataEPrazo.getId()).toUri();
@@ -94,7 +94,7 @@ public class TaskController {
     }
 
     @ApiOperation(value = "Recebe uma tarefa e varifica se é compativel com uma tarefa do tipo data e prazo")
-    @PostMapping("/{id}")
+    @PostMapping("V2/{id}")
     public ResponseEntity<TaskComDataEPrazo> postTaskComDataEPrazoById(@RequestBody TaskComDataEPrazo reqBodyTask){
         if(TaskComDataEPrazo.verificaSeDataEValidaParaIncluirTarefa(false)){
             TaskComDataEPrazo taskComDataEPrazo = TaskService.saveTaskComDataEPrazo(reqBodyTask);
@@ -107,7 +107,7 @@ public class TaskController {
     }
 
     @ApiOperation(value = "Atualiza uma tarefa com data e Prazo")
-    @PutMapping("/{id}")
+    @PutMapping("V2/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void putTaskComDataEPrazo(@PathVariable Long id, @RequestBody TaskComDataEPrazo reqBodyTask) {
         if (TaskComDataEPrazo.verificaSeDataEValidaParaIncluirTarefa(false)){
@@ -117,7 +117,7 @@ public class TaskController {
     }
     
     @ApiOperation(value = "Exclui uma tarefa com data e Prazo")
-    @DeleteMapping("/{id}")
+    @DeleteMapping("V2/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTaskcomDataEPrazo(@PathVariable Long id){
     taskService.deleteTaskComDataEPrazoById(id);
