@@ -2,7 +2,7 @@ FROM ubuntu:latest AS build
 
 RUN apt-get update
 RUN apt-get install openjdk-21-jdk -y
-COPY . .
+COPY codigo\roteiro01\roteiro01\src dest
 
 RUN apt-get install maven -y
 RUN mvn clean install
