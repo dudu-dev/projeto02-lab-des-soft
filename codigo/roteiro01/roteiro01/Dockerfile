@@ -2,7 +2,7 @@ FROM ubuntu:latest AS build
 
 RUN apt-get update
 RUN apt-get install openjdk-21-jdk -y
-COPY codigo\roteiro01\roteiro01 codigo\roteiro01\roteiro01\Dockerfile
+COPY . .
 
 RUN apt-get install maven -y
 RUN mvn clean install
