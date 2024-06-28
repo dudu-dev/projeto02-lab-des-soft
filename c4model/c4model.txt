@@ -1,3 +1,0 @@
-Aqui tem uma breve descrição do  c4 model
-Diagramas de contexto, container, componente e código
-Nesta pasta estarão os 4 diagramas do c4 model
