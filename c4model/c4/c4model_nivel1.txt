@@ -1,0 +1,9 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+LAYOUT_LEFT_RIGHT()
+Person(customer, "User", "User of the Task List App")
+System_Boundary(system_app, "Task List App") {
+  System(web_app, "Web App", "Web-based interface for users to interact with the app")
+  System(api, "API", "Backend API for data storage and retrieval")
+}
+@enduml

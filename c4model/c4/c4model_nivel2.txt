@@ -1,0 +1,8 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+LAYOUT_LEFT_RIGHT()
+System(system_app, "Task List App") {
+  Container(web_app_container, "Web App Container", "Container for the web app")
+  Container(api_container, "API Container", "Container for the backend API")
+}
+@enduml

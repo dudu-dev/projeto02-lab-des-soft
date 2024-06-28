@@ -1,0 +1,12 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+LAYOUT_LEFT_RIGHT()
+Container(web_app_container, "Web App Container") {
+  Component(web_app_frontend, "Web App Frontend", "Frontend code for the web app")
+  Component(web_app_backend, "Web App Backend", "Backend code for the web app")
+}
+Container(api_container, "API Container") {
+  Component(api_gateway, "API Gateway", "API gateway for incoming requests")
+  Component(data_storage, "Data Storage", "Database for storing task list data")
+}
+@enduml
