@@ -1,4 +1,8 @@
 # projeto02-lab-des-soft
-Projeto 02 da disciplina de laboratório de desenvolvimento de software
+Projeto da disciplina de laboratório de desenvolvimento de software
 
 Aluno: Eduardo Araujo Junqueira
+
+Backend de uma lista de tarefas
+
+branch para deploy no render
