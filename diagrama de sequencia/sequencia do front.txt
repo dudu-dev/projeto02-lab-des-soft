@@ -1,0 +1,39 @@
+@startuml
+actor User
+participant "Frontend" as FE
+participant "Task List Controller" as TLC
+participant "Task Service" as TS
+participant "Database" as DB
+
+User -> FE: Interage com a interface
+FE -> TLC: Requisição de Lista de Tarefas
+TLC -> TS: Obter Tarefas
+TS -> DB: Consultar Tarefas
+DB --> TS: Tarefas encontradas
+TS --> TLC: Tarefas encontradas
+TLC --> FE: Lista de Tarefas
+
+User -> FE: Cria Nova Tarefa
+FE -> TLC: Requisição de Criação de Tarefa
+TLC -> TS: Criar Tarefa
+TS -> DB: Salvar Tarefa
+DB --> TS: Tarefa salva
+TS --> TLC: Tarefa criada
+TLC --> FE: Confirmação de Tarefa Criada
+
+User -> FE: Atualiza Tarefa
+FE -> TLC: Requisição de Atualização de Tarefa
+TLC -> TS: Atualizar Tarefa
+TS -> DB: Atualizar Tarefa
+DB --> TS: Tarefa atualizada
+TS --> TLC: Tarefa atualizada
+TLC --> FE: Confirmação de Tarefa Atualizada
+
+User -> FE: Deleta Tarefa
+FE -> TLC: Requisição de Exclusão de Tarefa
+TLC -> TS: Excluir Tarefa
+TS -> DB: Excluir Tarefa
+DB --> TS: Tarefa excluída
+TS --> TLC: Tarefa excluída
+TLC --> FE: Confirmação de Tarefa Excluída
+@enduml

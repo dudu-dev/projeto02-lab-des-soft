@@ -1,0 +1,34 @@
+@startuml
+actor User
+participant "Task List Controller" as TLC
+participant "Task Service" as TS
+participant "Database" as DB
+
+User -> TLC: Get Task List
+TLC -> TS: Get Tasks
+TS -> DB: Retrieve Tasks
+DB --> TS: Tasks
+TS --> TLC: Tasks
+TLC --> User: Task List
+
+User -> TLC: Create New Task
+TLC -> TS: Create Task
+TS -> DB: Save Task
+DB --> TS: Task Saved
+TS --> TLC: Task Created
+TLC --> User: Task Created
+
+User -> TLC: Update Task
+TLC -> TS: Update Task
+TS -> DB: Update Task
+DB --> TS: Task Updated
+TS --> TLC: Task Updated
+TLC --> User: Task Updated
+
+User -> TLC: Delete Task
+TLC -> TS: Delete Task
+TS -> DB: Delete Task
+DB --> TS: Task Deleted
+TS --> TLC: Task Deleted
+TLC --> User: Task Deleted
+@enduml
